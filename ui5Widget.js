@@ -1,5 +1,5 @@
 (function() { 
-	let shadowRoot;
+	let _shadowRoot;
 	let _id;
 	let _password;
 
@@ -35,9 +35,9 @@
 		constructor() {
 			super(); 
 
-			shadowRoot = this.attachShadow({mode: "open"});
+			_shadowRoot = this.attachShadow({mode: "open"});
 
-			shadowRoot.appendChild(template.content.cloneNode(true));
+			_shadowRoot.appendChild(template.content.cloneNode(true));
 
 			_id=createGuid();
 
