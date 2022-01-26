@@ -92,7 +92,11 @@
                                 settings: this.settings
                             }
                         }));
-                    } 
+                    },
+                    
+                    handleCalendarSelect: function(oEvent){
+                        this.selectedDate = oEvent.getValue();
+                    }
                 });
             });
 
