@@ -52,29 +52,6 @@
 
 		}
 
-		onCustomWidgetAfterUpdate(changedProperties) {
-            loadthis(this);
-        }
-
-        _firePropertiesChanged() {
-            this.password = "";
-            this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                detail: {
-                    properties: {
-                        password: this.password
-                    }
-                }
-            }));
-        }
-
-		connectedCallback() {
-
-		}
-
-		disconnectedCallback() {
-            
-        }
-
 		onCustomWidgetBeforeUpdate(changedProperties) {
             if ("designMode" in changedProperties) {
                 this._designMode = changedProperties["designMode"];
@@ -103,18 +80,6 @@
         set password(value) {
             value = _password;
             this._export_settings.password = value;
-        }
-
-        static get observedAttributes() {
-            return [
-                "password"
-            ];
-        }
-
-        attributeChangedCallback(name, oldValue, newValue) {
-            if (oldValue != newValue) {
-                this[name] = newValue;
-            }
         }
 
     }
