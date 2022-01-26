@@ -76,9 +76,12 @@
                 "jquery.sap.global",
                 "sap/ui/core/mvc/Controller",
                 'sap/ui/unified/DateRange',
-                'sap/ui/core/format/DateFormat'
-            ], function(jQuery, Controller, DateRange, DateFormat) {
+                'sap/ui/core/format/DateFormat',
+                'sap/ui/core/library'
+            ], function(jQuery, Controller, DateRange, DateFormat, coreLibrary) {
                 "use strict";
+
+                var CalendarType = coreLibrary.CalendarType;
 
                 return Controller.extend("myView.Template", {
                     oFormatYyyymmdd: null,
