@@ -5,29 +5,29 @@
 
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<div id="ui5_content" name="ui5_content">
-			<slot name="content"/>
-		</div>
-
-		<script id="oView" name="oView" type="sapui5/xmlview">
-			<mvc:View
-				controllerName="myView.Template"
-				xmlns:l="sap.ui.layout"
-				xmlns:mvc="sap.ui.core.mvc"
-				xmlns="sap.m">
-				<l:VerticalLayout
-					class="sapUiContentPadding"
-					width="100%"
-					<l:content>
-						<Input
-							id="passwordInput"
-							type="Password"
-							placeholder="Enter password..."
-							liveChange="onButtonPress"/>
-					</l:content>
-				</l:VerticalLayout>
-			</mvc:View>
-		</script>
+        <style>
+        </style>
+        <div id="ui5_content" name="ui5_content">
+        <slot name="content"></slot>
+        </div>
+        <script id="oView" name="oView" type="sapui5/xmlview">
+            <mvc:View
+                controllerName="myView.Template"
+                xmlns:l="sap.ui.layout"
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns="sap.m">
+                <l:VerticalLayout
+                    class="sapUiContentPadding"
+                    width="100%">
+                    <l:content>
+                        <Input
+                            id="passwordInput"
+                            type="Password"
+                            placeholder="Enter password ..." liveChange="onButtonPress"/>
+                    </l:content>
+                </l:VerticalLayout>
+            </mvc:View>
+        </script>
 	`;
 
 
