@@ -31,7 +31,7 @@
 	`;
 
 
-	class UI5Widget extends HTMLElement {
+	class InputPassword extends HTMLElement {
 		constructor() {
 			super(); 
 
