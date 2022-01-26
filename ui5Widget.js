@@ -91,7 +91,7 @@
                     },
                     
                     handleCalendarSelect: function(oEvent){
-                        let sDate = oEvent.oSource.getSelectedDates()[0].getStartDate();
+                        let oDate = oEvent.oSource.getSelectedDates()[0].getStartDate();
                         this.selectedDate = this.oFormatYyyymmdd.format(oDate);
                         console.log("NewDate: " + this.selectedDate);
                     }
