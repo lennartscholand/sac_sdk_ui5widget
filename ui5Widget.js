@@ -79,23 +79,16 @@
                 "use strict";
 
                 return Controller.extend("myView.Template", {
-                    onInputLiveChange: function(oEvent) {
-                        _password = oView.byId("passwordInput").getValue();
-                        that._firePropertiesChanged();
-                        console.log(_password);
+                    oFormatYyyymmdd: null,
 
-                        this.settings = {};
-                        this.settings.password = "";
-
-                        that.dispatchEvent(new CustomEvent("onStart", {
-                            detail: {
-                                settings: this.settings
-                            }
-                        }));
+                    onInit: function() {
+                        this.oFormatYyyymmdd = DateFormat.getInstance({pattern: "yyyy-MM-dd", calendarType: CalendarType.Gregorian});
                     },
                     
                     handleCalendarSelect: function(oEvent){
-                        this.selectedDate = oEvent.getValue();
+                        let sDate = oEvent.oSource.getSelectedDates()[0].getStartDate();
+                        this.selectedDate = this.oFormatYyyymmdd.format(oDate);
+                        console.log("NewDate: " + this.selectedDate);
                     }
                 });
             });
