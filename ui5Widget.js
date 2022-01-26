@@ -74,8 +74,10 @@
             //### Controller ###
             sap.ui.define([
                 "jquery.sap.global",
-                "sap/ui/core/mvc/Controller"
-            ], function(jQuery, Controller) {
+                "sap/ui/core/mvc/Controller",
+                'sap/ui/unified/DateRange',
+                'sap/ui/core/format/DateFormat'
+            ], function(jQuery, Controller, DateRange, DateFormat) {
                 "use strict";
 
                 return Controller.extend("myView.Template", {
