@@ -1,9 +1,9 @@
 {
-	"id": "com.conet.widget.ui5Widget",
+	"id": "com.conet.widget.inputpassword",
 	"version": "1.0.0",
 	"name": "UI5 Widget",
 	"description": "Demo UI5 Widget Password",
-	"newInstancePrefix": "ui5Widget",
+	"newInstancePrefix": "InputPassword",
 	"icon": "",
 	"vendor": "Conet",
 	"eula": "",
@@ -11,21 +11,21 @@
 	"webcomponents": [
 		{
 			"kind": "main",
-			"tag": "com-conet-widget-ui5widget",
+			"tag": "com-conet-widget-inputpassword",
 			"url": "https://lennartscholand.github.io/sac_sdk_ui5widget/ui5Widget.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
-			"tag": "com-conet-widget-ui5widget-styling",
+			"tag": "com-conet-widget-inputpassword-styling",
 			"url": "https://lennartscholand.github.io/sac_sdk_ui5widget/ui5Widget_styling.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
-			"tag": "com-conet-widget-ui5widget-builder",
+			"tag": "com-conet-widget-inputpassword-builder",
 			"url": "https://lennartscholand.github.io/sac_sdk_ui5widget/ui5Widget_builder.js",
 			"integrity": "",
 			"ignoreIntegrity": true

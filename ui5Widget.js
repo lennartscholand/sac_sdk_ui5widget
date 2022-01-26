@@ -118,7 +118,7 @@
         }
 
     }
-    customElements.define("com-conet-widget-ui5", InputPassword);
+    customElements.define("com-conet-widget-inputpassword", InputPassword);
 
     // UTILS
     function loadthis(that) {

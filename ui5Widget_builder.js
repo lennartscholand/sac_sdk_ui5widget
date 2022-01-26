@@ -3,7 +3,7 @@
 	template.innerHTML = `
 		<form id="form">
 			<fieldset>
-				<legend>Stock Widget Properties</legend>
+				<legend>InputPassword Properties</legend>
 				<table>
 					<tr>
 						<td>Opacity</td>
@@ -21,7 +21,7 @@
 		</style>
 	`;
 
-	class StockWidgetBuilderPanel extends HTMLElement {
+	class InputPasswordBuilderPanel extends HTMLElement {
 		constructor() {
 			super();
 			this._shadowRoot = this.attachShadow({mode: "open"});
@@ -49,5 +49,5 @@
 		}
 	}
 
-	customElements.define("com-conet-widget-stockwidget-builder", StockWidgetBuilderPanel);
+	customElements.define("com-conet-widget-inputpassword-builder", InputPasswordBuilderPanel);
 })();

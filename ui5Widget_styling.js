@@ -3,7 +3,7 @@
 	template.innerHTML = `
 		<form id="form">
 			<fieldset>
-				<legend>Stock Widget Properties</legend>
+				<legend>InputPasswordProperties</legend>
 				<table>
 					<tr>
 						<td>Color</td>
@@ -15,7 +15,7 @@
 		</form>
 	`;
 
-	class StockWidgetStylingPanel extends HTMLElement {
+	class InputPasswordStylingPanel extends HTMLElement {
 		constructor() {
 			super();
 			this._shadowRoot = this.attachShadow({mode: "open"});
@@ -43,5 +43,5 @@
 		}
 	}
 
-	customElements.define("com-conet-widget-stockwidget-styling", StockWidgetStylingPanel);
+	customElements.define("com-conet-widget-inputpassword-styling", InputPasswordStylingPanel);
 })();
