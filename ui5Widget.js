@@ -14,16 +14,16 @@
             <mvc:View
                 controllerName="myView.Template"
                 xmlns:l="sap.ui.layout"
+                xmlns:u="sap.ui.unified"
                 xmlns:mvc="sap.ui.core.mvc"
                 xmlns="sap.m">
                 <l:VerticalLayout
                     class="sapUiContentPadding"
                     width="100%">
-                    <l:content>
-                        <Input
-                            id="passwordInput"
-                            type="Password"
-                            placeholder="Enter password ..." liveChange="onButtonPress"/>
+                     <l:content>
+                        <u:Calendar
+                            id="calendar"
+                            select="handleCalendarSelect" />
                     </l:content>
                 </l:VerticalLayout>
             </mvc:View>
@@ -31,35 +31,20 @@
 	`;
 
 
-	class InputPassword extends HTMLElement {
+	customElements.define("com-conet-widget-inputpassword1", class InputPassword extends HTMLElement {
 		constructor() {
 			super(); 
-
 			_shadowRoot = this.attachShadow({mode: "open"});
-
 			_shadowRoot.appendChild(template.content.cloneNode(true));
 
 			_id=createGuid();
-
 			_shadowRoot.querySelector("#oView").id = _id + "_oView";
-
-			this._export_settings = {};
-			this._export_settings.password = "";
-
-			this.addEventListener("click", event => {
-				console.log("click");
-			});
 
 		}
 
-		onCustomWidgetBeforeUpdate(changedProperties) {
-            if ("designMode" in changedProperties) {
-                this._designMode = changedProperties["designMode"];
-            }
-        }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            loadthis(this);
+            loadWidget(this);
         }
 
         _firePropertiesChanged() {
@@ -73,20 +58,10 @@
             }));
         }
 
-        // SETTINGS
-        get password() {
-            return this._export_settings.password;
-        }
-        set password(value) {
-            value = _password;
-            this._export_settings.password = value;
-        }
+    });
 
-    }
-    customElements.define("com-conet-widget-inputpassword", InputPassword);
 
-    // UTILS
-    function loadthis(that) {
+    function loadWidget(that) {
         var that_ = that;
       
         let content = document.createElement('div');
@@ -104,7 +79,7 @@
                 "use strict";
 
                 return Controller.extend("myView.Template", {
-                    onButtonPress: function(oEvent) {
+                    onInputLiveChange: function(oEvent) {
                         _password = oView.byId("passwordInput").getValue();
                         that._firePropertiesChanged();
                         console.log(_password);
@@ -127,10 +102,6 @@
             });
             oView.placeAt(content);
 
-
-            if (that_._designMode) {
-                oView.byId("passwordInput").setEnabled(false);
-            }
         });
     }
 

@@ -1,5 +1,5 @@
 {
-	"id": "com.conet.widget.inputpassword",
+	"id": "com.conet.widget.inputpassword.1",
 	"version": "1.0.1",
 	"name": "UI5 Password",
 	"description": "Demo UI5 Widget Password",
@@ -11,7 +11,7 @@
 	"webcomponents": [
 		{
 			"kind": "main",
-			"tag": "com-conet-widget-inputpassword",
+			"tag": "com-conet-widget-inputpassword1",
 			"url": "https://lennartscholand.github.io/sac_sdk_ui5widget/ui5Widget.js",
 			"integrity": "",
 			"ignoreIntegrity": true
@@ -57,9 +57,7 @@
 		}
 	},
 	"events": {
-		"onClick": {
-			"description": "Called when the user clicks the Colored Box."
-		}
+		
 	}
 }
 
