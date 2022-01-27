@@ -30,7 +30,7 @@
 	`;
 
 
-	customElements.define("com-conet-widget-ui5calendar1", class InputPassword extends HTMLElement {
+	customElements.define("com-conet-widget-ui5calendar1", class Calendar extends HTMLElement {
 		constructor() {
 			super(); 
 			_shadowRoot = this.attachShadow({mode: "open"});

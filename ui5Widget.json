@@ -1,6 +1,6 @@
 {
 	"id": "com.conet.widget.calendar.1",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"name": "UI5 Calendar",
 	"description": "Demo UI5 Widget Calendar",
 	"newInstancePrefix": "Calendar",
