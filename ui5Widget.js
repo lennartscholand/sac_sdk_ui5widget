@@ -1,7 +1,6 @@
 (function() { 
 	let _shadowRoot;
 	let _id;
-	let _password;
 
 	let template = document.createElement("template");
 	template.innerHTML = `
@@ -31,7 +30,7 @@
 	`;
 
 
-	customElements.define("com-conet-widget-inputpassword1", class InputPassword extends HTMLElement {
+	customElements.define("com-conet-widget-ui5calendar1", class InputPassword extends HTMLElement {
 		constructor() {
 			super(); 
 			_shadowRoot = this.attachShadow({mode: "open"});

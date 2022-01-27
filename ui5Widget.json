@@ -1,9 +1,9 @@
 {
-	"id": "com.conet.widget.inputpassword.1",
+	"id": "com.conet.widget.calendar.1",
 	"version": "1.0.1",
-	"name": "UI5 Password",
-	"description": "Demo UI5 Widget Password",
-	"newInstancePrefix": "InputPassword",
+	"name": "UI5 Calendar",
+	"description": "Demo UI5 Widget Calendar",
+	"newInstancePrefix": "Calendar",
 	"icon": "",
 	"vendor": "Conet",
 	"eula": "",
@@ -11,7 +11,7 @@
 	"webcomponents": [
 		{
 			"kind": "main",
-			"tag": "com-conet-widget-inputpassword1",
+			"tag": "com-conet-widget-ui5calendar1",
 			"url": "https://lennartscholand.github.io/sac_sdk_ui5widget/ui5Widget.js",
 			"integrity": "",
 			"ignoreIntegrity": true
