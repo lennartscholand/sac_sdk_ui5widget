@@ -1,7 +1,7 @@
 {
-	"id": "com.conet.widget.ui5calendar.1",
+	"id": "com.conet.widget.ui5calendarlocal.1",
 	"version": "1.0.0",
-	"name": "UI5 Calendar",
+	"name": "UI5 Calendar Local",
 	"description": "Demo UI5 Widget Calendar",
 	"newInstancePrefix": "Calendar",
 	"icon": "",
@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-conet-widget-ui5calendar1",
-			"url": "https://lennartscholand.github.io/sac_sdk_ui5widget/ui5Widget.js",
+			"url": "http://localhost:8888/sac_sdk_ui5widget/ui5Widget.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
