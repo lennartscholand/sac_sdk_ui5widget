@@ -63,51 +63,6 @@
             }));
         }
 
-        loadWidget(that) {
-          
-            let content = document.createElement('div');
-            content.slot = "content";
-            that.appendChild(content);
-    
-            sap.ui.getCore().attachInit(function() {
-                "use strict";
-    
-                //### Controller ###
-                sap.ui.define([
-                    "jquery.sap.global",
-                    "sap/ui/core/mvc/Controller",
-                    'sap/ui/unified/DateRange',
-                    'sap/ui/core/format/DateFormat',
-                    'sap/ui/core/library'
-                ], function(jQuery, Controller, DateRange, DateFormat, coreLibrary) {
-                    "use strict";
-    
-                    var CalendarType = coreLibrary.CalendarType;
-    
-                    return Controller.extend("myView.Template", {
-                        oFormatYyyymmdd: null,
-    
-                        onInit: function() {
-                            this.oFormatYyyymmdd = DateFormat.getInstance({pattern: "yyyy-MM-dd", calendarType: CalendarType.Gregorian});
-                        },
-                        
-                        handleCalendarSelect: function(oEvent){
-                            let oDate = oEvent.oSource.getSelectedDates()[0].getStartDate();
-                            this.selectedDate = this.oFormatYyyymmdd.format(oDate);
-                            console.log("NewDate: " + this.selectedDate);
-                        }
-                    });
-                });
-    
-                //### THE APP: place the XMLView somewhere into DOM ###
-                var oView  = sap.ui.xmlview({
-                    viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
-                });
-                oView.placeAt(content);
-    
-            });
-        }
-
         get selectedDate(){
             return this.selectedDate;
         }
@@ -117,6 +72,52 @@
         }
 
     });
+
+
+    function loadWidget(that) {
+          
+        let content = document.createElement('div');
+        content.slot = "content";
+        that.appendChild(content);
+
+        sap.ui.getCore().attachInit(function() {
+            "use strict";
+
+            //### Controller ###
+            sap.ui.define([
+                "jquery.sap.global",
+                "sap/ui/core/mvc/Controller",
+                'sap/ui/unified/DateRange',
+                'sap/ui/core/format/DateFormat',
+                'sap/ui/core/library'
+            ], function(jQuery, Controller, DateRange, DateFormat, coreLibrary) {
+                "use strict";
+
+                var CalendarType = coreLibrary.CalendarType;
+
+                return Controller.extend("myView.Template", {
+                    oFormatYyyymmdd: null,
+
+                    onInit: function() {
+                        this.oFormatYyyymmdd = DateFormat.getInstance({pattern: "yyyy-MM-dd", calendarType: CalendarType.Gregorian});
+                    },
+                    
+                    handleCalendarSelect: function(oEvent){
+                        let oDate = oEvent.oSource.getSelectedDates()[0].getStartDate();
+                        this.selectedDate = this.oFormatYyyymmdd.format(oDate);
+                        console.log("NewDate: " + this.selectedDate);
+                    }
+                });
+            });
+
+            //### THE APP: place the XMLView somewhere into DOM ###
+            var oView  = sap.ui.xmlview({
+                viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+            });
+            oView.placeAt(content);
+
+        });
+    }
 
 
 	function createGuid() {
