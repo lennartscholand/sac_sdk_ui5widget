@@ -67,10 +67,10 @@
             return this.selectedDate;
         }
     
-        set selectedDate(value){
+        /* set selectedDate(value){
             this.selectedDate = value;
         }
-
+ */
     });
 
 
