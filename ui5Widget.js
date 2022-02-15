@@ -63,6 +63,14 @@
             }));
         }
 
+        get selectedDate(){
+            return this.selectedDate;
+        }
+    
+        set selectedDate(value){
+            this.selectedDate = value;
+        }
+
     });
 
 
