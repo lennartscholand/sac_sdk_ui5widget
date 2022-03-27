@@ -40,6 +40,10 @@
 			_id=createGuid();
 			_shadowRoot.querySelector("#oView").id = _id + "_oView";
 
+            this.addEventListener("click", event => {
+				var event = new Event("onClick");
+				this.dispatchEvent(event);
+            });
 		}
 
         onCustomWidgetBeforeUpdate(changedProperties) {

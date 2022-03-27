@@ -73,7 +73,9 @@
 		}
 	},
 	"events": {
-		
+		"onClick": {
+			"description": "Called when the user clicks the Calender"
+		}
 	}
 }
 
