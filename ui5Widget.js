@@ -104,7 +104,7 @@
                              })); 
                         }
                     }).bind(that);
-                }).bind(that);
+                });
     
                 //### THE APP: place the XMLView somewhere into DOM ###
                 var oView  = sap.ui.xmlview({
