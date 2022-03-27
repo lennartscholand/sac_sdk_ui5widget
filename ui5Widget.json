@@ -54,6 +54,22 @@
 				}
 			],
 			"body": "this.height = newHeight;"
+		},
+		"setSelectedDate": {
+			"description": "Sets the selected Date.",
+			"parameters": [
+				{
+					"name": "newDate",
+					"type": "string",
+					"description": "The date value"
+				}
+			],
+			"body": "this.selectedDate = newDate;"
+		},
+		"getDate": {
+			"description": "Get the selected Date",
+			"body": "return this.selectedDate;",
+			"returnType": "string"
 		}
 	},
 	"events": {
