@@ -43,36 +43,34 @@
 		}
 
         onCustomWidgetBeforeUpdate(changedProperties) {
-
-            this._props = { ...this._props, ...changedProperties }; 
-        }
-
+            this._props = { ...this._props, ...changedProperties };
+         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            loadWidget(this);
-        }
+            if ("selectedDate" in changedProperties) {
+				debugger;
+			}
 
-        _firePropertiesChanged() {
-            this.password = "";
-            this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                detail: {
-                    properties: {
-                        password: this.password
-                    }
-                }
-            }));
+            if ("width" in changedProperties) {
+                debugger;
+				this.style["background-color"] = changedProperties["color"];
+			}
+
+
+            loadWidget(this);
         }
 
     });
 
 
     function loadWidget(that) {
-        var that_ = that;
       
+        //Einfügen neues Div-Element in HTML-Template
         let content = document.createElement('div');
         content.slot = "content";
-        that_.appendChild(content);
+        that.appendChild(content);
 
+        //SAPUI5 Logik
         sap.ui.getCore().attachInit(function() {
             "use strict";
 
@@ -99,6 +97,13 @@
                         let oDate = oEvent.oSource.getSelectedDates()[0].getStartDate();
                         this.selectedDate = this.oFormatYyyymmdd.format(oDate);
                         console.log("NewDate: " + this.selectedDate);
+                        this.dispatchEvent(new CustomEvent("propertiesChanged", { 
+                            detail: { 
+                               properties: { 
+                                selectedDate: this.selectedDate 
+                               } 
+                            } 
+                         })); 
                     }
                 });
             });
