@@ -95,7 +95,7 @@
                             let sDate = this.oFormatYyyymmdd.format(oDate);
                             //this.selectedDate = this.oFormatYyyymmdd.format(oDate);
                             console.log("NewDate: " + sDate);
-                            this.dispatchEvent(new CustomEvent("propertiesChanged", { 
+                            that.dispatchEvent(new CustomEvent("propertiesChanged", { 
                                 detail: { 
                                    properties: { 
                                     selectedDate: sDate
@@ -112,7 +112,7 @@
                 });
                 oView.placeAt(content);
     
-            }).bind(that);
+            });
         }
 
     });
