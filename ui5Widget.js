@@ -57,7 +57,7 @@
 			}
 
 
-            loadWidget(this);
+            this.loadWidget(this);
         }
 
         loadWidget(that) {
