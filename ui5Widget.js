@@ -92,18 +92,19 @@
                         
                         handleCalendarSelect: function(oEvent){
                             let oDate = oEvent.oSource.getSelectedDates()[0].getStartDate();
-                            this.selectedDate = this.oFormatYyyymmdd.format(oDate);
-                            console.log("NewDate: " + this.selectedDate);
+                            let sDate = this.oFormatYyyymmdd.format(oDate);
+                            //this.selectedDate = this.oFormatYyyymmdd.format(oDate);
+                            console.log("NewDate: " + sDate);
                             this.dispatchEvent(new CustomEvent("propertiesChanged", { 
                                 detail: { 
                                    properties: { 
-                                    selectedDate: this.selectedDate 
+                                    selectedDate: sDate
                                    } 
                                 } 
                              })); 
                         }
-                    });
-                });
+                    }).bind(that);
+                }).bind(that);
     
                 //### THE APP: place the XMLView somewhere into DOM ###
                 var oView  = sap.ui.xmlview({
@@ -111,7 +112,7 @@
                 });
                 oView.placeAt(content);
     
-            });
+            }).bind(that);
         }
 
     });
